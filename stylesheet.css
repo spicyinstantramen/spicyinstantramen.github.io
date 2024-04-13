@@ -1,0 +1,53 @@
+.image-count {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  background: url(https://m.media-amazon.com/images/I/71WnDinZkaL.jpg);
+  background-size: contain;
+  cursor: pointer;
+}
+
+.image-count::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: ":–)";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 5em;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.image-count.animate::after {
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    padding-bottom: 50px;
+  }
+  100% {
+    opacity: 0;
+    padding-bottom: 50px;
+  }
+}
+
+#counter {
+  text-align: center;
+  width: 500px;
+  font-size: 2em;
+  font-weight: bold;
+  user-select: none;
+}
